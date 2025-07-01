@@ -306,17 +306,17 @@ const ProductList = () => {
   }, []);
 
   // Navigation functions
-  const goToNext = () => {
+  const goToNext = React.useCallback(() => {
     setCurrentIndex((prev) =>
       prev + 1 >= products.length - visibleProducts + 1 ? 0 : prev + 1
     );
-  };
+  }, [products.length, visibleProducts]);
 
-  const goToPrev = () => {
+  const goToPrev = React.useCallback(() => {
     setCurrentIndex((prev) =>
       prev - 1 < 0 ? Math.max(0, products.length - visibleProducts) : prev - 1
     );
-  };
+  }, [products.length, visibleProducts]);
 
   // Toggle product as favorite
   const toggleFavorite = (id: string) => {
@@ -332,11 +332,6 @@ const ProductList = () => {
     );
   };
 
-  // Calculate displayed products
-  const displayedProducts = products.slice(
-    currentIndex,
-    Math.min(currentIndex + visibleProducts, products.length)
-  );
 
   // Auto scroll function
   useEffect(() => {
@@ -345,7 +340,7 @@ const ProductList = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex, products.length, visibleProducts]);
+  }, [goToNext]);
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8 bg-gradient-to-b from-gray-50 to-white">
