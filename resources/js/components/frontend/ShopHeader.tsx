@@ -6,6 +6,7 @@ import {
   Minus,
   X,
   Search,
+  ShoppingBagIcon,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -100,12 +101,10 @@ export default function ShopHeader() {
             <Link href="/" className="flex items-center">
               <div className="relative h-8 w-40">
                 <div className="flex items-center">
-                  <span className="text-3xl font-bold tracking-tight">
-                    Simple UI
+                   <ShoppingBagIcon/> 
+                  <span className="text-2xl ml-2 font-bold tracking-tight">
+                  Larastore
                   </span>
-                  <div className="ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 text-white">
-                    <span className="text-xs font-bold">★</span>
-                  </div>
                 </div>
               </div>
             </Link>

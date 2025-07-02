@@ -163,10 +163,10 @@ const Dashboard = () => {
   return (
     <AppLayout breadcrumbs={breadcrumbs}>
       <Head title="Dashboard" />
-<div className="p-6 bg-gray-50 min-h-screen">
+<div className="p-6  min-h-screen">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Dashboard</h1>
-        <p className="text-sm text-gray-500">
+        <h1 className="text-2xl font-bold  mb-2">Dashboard</h1>
+        <p className="text-sm text-muted-foreground">
           Welcome back! Here's an overview of your store.
         </p>
       </div>
